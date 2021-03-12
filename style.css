@@ -1,0 +1,396 @@
+/* Afin de valider ton code CSS, clic sur la petite flèche en haut à droite de cette fenêtre. Pour rappel, tu peux jeter un oeil par ici pour en savoir un peu plus: https://blog.codepen.io/2017/10/11/analyze-css-now-using-stylelint/ */
+
+/* Ecris ici ton code CSS */
+
+/*---------------GENERAL----------------*/
+
+.container {
+  background: url(http://www.manza3d.com/wildcircus/circus_fond.png) center /cover
+    no-repeat;
+  padding-top: 200px;
+  margin-right: auto;
+  margin-left: auto;
+  font-family: "Economica", sans-serif;
+  color: #a54848;
+  font-size: 20px;
+}
+
+/*---------------container + animals-r + curtains-r ---------------*/
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+  #curtains-r {
+    transform: translate(740px, -200px) rotateY(180deg);
+    -webkit-transform: translate(740px, -200px) rotateY(180deg);
+    -ms-transform: translate(740px, -200px) rotateY(180deg);
+    -moz-transform: translate(740px, -200px) rotateY(180deg);
+    -o-transform: translate(740px, -200px) rotateY(180deg);
+  }
+  #animals-r {
+    background: url(http://www.manza3d.com/wildcircus/circus_animaux_d.png)
+      bottom space;
+    transform: translateX(720px);
+    -webkit-transform: translateX(720px);
+    -ms-transform: translateX(720px);
+    -moz-transform: translateX(720px);
+    -o-transform: translateX(720px);
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+  #curtains-r {
+    transform: translate(940px, -200px) rotateY(180deg);
+    -webkit-transform: translate(940px, -200px) rotateY(180deg);
+    -ms-transform: translate(940px, -200px) rotateY(180deg);
+    -moz-transform: translate(940px, -200px) rotateY(180deg);
+    -o-transform: translate(940px, -200px) rotateY(180deg);
+  }
+  #animals-r {
+    background: url(http://www.manza3d.com/wildcircus/circus_animaux_d.png)
+      bottom space;
+    transform: translateX(920px);
+    -webkit-transform: translateX(920px);
+    -ms-transform: translateX(920px);
+    -moz-transform: translateX(920px);
+    -o-transform: translateX(920px);
+  }
+}
+
+/*--------------- curtains fixed ---------------*/
+.curtains {
+  pointer-events: none;
+  position: fixed;
+  height: 100%;
+  width: 380px;
+  background: url(http://www.manza3d.com/wildcircus/circus_rideaux.png) center
+    bottom/cover no-repeat;
+  z-index: 5;
+}
+
+#curtains-l {
+  transform: translate(-180px, -200px);
+  -webkit-transform: translate(-180px, -200px);
+  -ms-transform: translate(-180px, -200px);
+  -moz-transform: translate(-180px, -200px);
+  -o-transform: translate(-180px, -200px);
+}
+
+/*--------------- animals fixed ---------------*/
+.animals {
+  pointer-events: none;
+  position: absolute;
+  display: block;
+  height: 3600px;
+  width: 400px;
+  z-index: 15;
+}
+
+#animals-l {
+  background: url(http://www.manza3d.com/wildcircus/circus_animaux_g.png) bottom
+    space;
+  transform: translateX(-180px);
+  -webkit-transform: translateX(-180px);
+  -ms-transform: translateX(-180px);
+  -moz-transform: translateX(-180px);
+  -o-transform: translateX(-180px);
+}
+
+/*--------------- General : Titles & Links ---------------*/
+header h1,
+.container h2,
+.container h3,
+nav li > a {
+  font-weight: bold;
+  text-decoration: none;
+  font-family: "Amatic SC", cursive;
+}
+
+header h1 {
+  text-align: center;
+  font-size: 100px;
+}
+
+h1 a,
+h1 a:hover,
+h1 a:visited,
+footer a:visited,
+nav a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+.container h2 {
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 50px;
+}
+
+.container h3 {
+  font-size: 30px;
+}
+
+#section-contact h2 {
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 100px;
+  padding-top: 70px;
+  font-family: "Amatic SC", cursive;
+}
+
+/*--------------- separative line ----------------*/
+
+.container hr {
+  margin: 50px;
+  border: 0.5px solid #d26161;
+}
+
+/*---------------Balises----------------*/
+
+.tag {
+  display: block;
+  height: 150px;
+  margin-top: -150px;
+  visibility: hidden;
+}
+
+/*--------------------------------------------------------*/
+/*---------------HEADER : Fixed ----------------*/
+
+header {
+  width: 100%;
+  background: url(http://www.manza3d.com/wildcircus/circus_header.png) center
+    no-repeat;
+  height: 200px;
+  z-index: 20;
+}
+
+/*--------------------------------------------------------*/
+/*---------------NAV----------------*/
+
+nav {
+  padding-bottom: 50px;
+}
+
+/*---------------Boutons----------------*/
+nav li > a {
+  color: white;
+  background-color: #a54848;
+  text-align: center;
+  padding: 5px 10px;
+  font-size: 50px;
+  box-shadow: 0px 0px 10px #777;
+  -webkit-box-shadow: 0px 0px 10px #777;
+  -moz-box-shadow: 0px 0px 10px #777;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+}
+
+nav a:hover {
+  text-decoration: none;
+  color: white;
+  animation-name: NavChange;
+  animation-duration: 1s;
+}
+
+@keyframes NavChange {
+  from {
+    background-color: #d26161;
+  }
+  to {
+    background-color: #a54848;
+  }
+}
+
+/*--------------------------------------------------------*/
+/*---------------section-performance----------------*/
+
+/*--------------- cellules ----------------*/
+#section-performance li ul li {  
+  margin:5px;
+  padding: 180px 20px 0px 20px;
+  border: 2px dotted #a54848;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+}
+
+/*--------------- performance 1 : image ----------------*/
+li.laugh {
+  background: url(http://www.manza3d.com/wildcircus/present_1.png) center 20px
+    no-repeat;
+}
+
+/*--------------- performance 2 : image ----------------*/
+li.dream {
+  background: url(http://www.manza3d.com/wildcircus/magicien_1.png) center 20px
+    no-repeat;
+}
+
+/*--------------- performance 3 : image ----------------*/
+li.marvelat {
+  background: url(http://www.manza3d.com/wildcircus/lion_1.png) center 20px
+    no-repeat;
+}
+
+#section-performance li h3 {
+  text-align: center;
+}
+
+/*--------------------------------------------------------*/
+/*---------------section-aboutus----------------*/
+#section-aboutus [class*="row"] {
+  margin-bottom: 30px;
+}
+
+/*--------------- tent : size ----------------*/
+.tent {
+  width: 500px;
+}
+
+/*--------------- hippo : image size ----------------*/
+.hippo {
+  width: 200px;
+}
+
+/*--------------- rabbits : image size & position ----------------*/
+.rabbits {
+  height: 260px;
+  background: url(http://www.manza3d.com/wildcircus/lapins.png) 80% 85%/5%
+      no-repeat,
+    url(http://www.manza3d.com/wildcircus/lapins.png) 50% 90%/7% no-repeat,
+    url(http://www.manza3d.com/wildcircus/lapins.png) 60% 95%/10% no-repeat,
+    url(http://www.manza3d.com/wildcircus/lapins.png) 40% 80%/5% no-repeat,
+    url(http://www.manza3d.com/wildcircus/lapins.png) 25% 80%/7% no-repeat,
+    url(http://www.manza3d.com/wildcircus/lapins.png) 10% 90%/10% no-repeat,
+    url(http://www.manza3d.com/wildcircus/lapins.png) 10% 40% no-repeat,
+    url(http://www.manza3d.com/wildcircus/lapins.png) 30% 0% no-repeat,
+    url(http://www.manza3d.com/wildcircus/lapins.png) 55% 50% no-repeat,
+    url(http://www.manza3d.com/wildcircus/lapins.png) 90% 40% no-repeat,
+    url(http://www.manza3d.com/wildcircus/lapins.png) 70% 30% no-repeat;
+}
+
+/*--------------- popcorn : image size ----------------*/
+.popcorn {
+  width: 200px;
+}
+
+/*--------------- unicorn : image size & cursor ----------------*/
+.unicorn {
+  width: 300px;
+  cursor: url(http://www.manza3d.com/wildcircus/cursor_50.png), pointer;
+}
+
+/*--------------- prices : image size ----------------*/
+.prices {
+  width: 50px;
+}
+
+/*--------------- special text ----------------*/
+span.bigtext {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+span.littletext {
+  font-size: 10px;
+  font-weight: bold;
+}
+
+/*--------------------------------------------------------*/
+/*---------------SectionPrices----------------*/
+
+/*--------------- ticket ----------------*/
+#section-prices {
+  background: url(http://www.manza3d.com/wildcircus/ticket.png) 30% 0px
+    no-repeat;
+  padding-bottom: 20px;
+}
+
+/*--------------- Prices table ----------------*/
+#section-prices table {
+  border-collapse: separate;
+  border-spacing: 3px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
+
+#section-prices td,
+#section-prices th {
+  background-color: white;
+  border: 2px solid #be5454;
+  padding: 10px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+
+#section-prices th {
+  background-color: #f9f4f4;
+}
+
+/*--------------------------------------------------------*/
+/*---------------SectionContact----------------*/
+
+/*---------------contact : foreground ----------------*/
+#section-contact {
+  position: relative;
+  font-family: "Economica", sans-serif;
+  font-size: 20px;
+  color: white;
+  background: url(http://www.manza3d.com/wildcircus/circus_bottom.png) center
+    top no-repeat;
+  z-index: 10;
+}
+
+/*---------------Formulaire ----------------*/
+#section-contact form {
+  padding-bottom: 20px;
+}
+
+/*--------------- image 1px*1500px ----------------*/
+.contact-bg {
+  background: url(http://www.manza3d.com/wildcircus/circus_bottom_px.png) center
+    top repeat-y;
+}
+
+/*--------------- Send button ----------------*/
+.btn-wild {
+  width: 100%;
+  background-color: #a54848;
+  color: white;
+  font-size: 18px !important;
+}
+
+.btn-wild:hover {
+  color: white !important;
+  animation-name: NavChange;
+  animation-duration: 1s;
+}
+
+/*--------------------------------------------------------*/
+/*---------------Footer----------------*/
+
+footer {
+  position: relative;
+  font-family: "Economica", sans-serif;
+  color: white;
+  font-size: 16px;
+  background-color: #be5454;
+  z-index: 10;
+}
+
+/*--------------- Links ----------------*/
+footer a {
+  color: white;
+  text-decoration: underline;
+}

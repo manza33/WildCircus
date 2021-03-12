@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style type="text/css">
+ 
+</style>
+ 
+<script type="text/javascript">
+
+//var audio = new Audio(document.getElementById('v1'));
+//audio.loadeddata();
+ 
+function MusicPlay(){
+
+var audio=document.getElementById('v1')
+if(audio.paused==true){
+audio.play();
+document.getElementById("DivUnicorn").style.backgroundColor="RED";
+}
+else{
+audio.pause()
+}
+}
+
+function MusicPause(){
+document.getElementById("DivUnicorn").style.backgroundColor="white";
+var audio=document.getElementById('v1')
+ 
+if(audio.play==true){
+audio.pause()
+}
+
+
+else{
+audio.pause()
+}
+}
+
+ 
+</script>
+ 
+</head>
+<body>
+ 
+       <div>
+         <audio id="v1" preload="metadata" autoplay="true"> 
+			 <source src='http://www.manza3d.com/wildcircus/AlwaysUnicorn.mp3' type='audio/mp3'>
+			 <source src='http://www.manza3d.com/wildcircus/AlwaysUnicorn.ogg' type='audio/ogg'>
+			 </audio>
+       </div>
+ 
+    <div  ><img src="http://www.manza3d.com/wildcircus/unicorn.png" class="Unicorn" id="DivUnicorn"onmouseover='MusicPlay()' onmouseout='MusicPause()' ></div>And... We have a FAT Unicorn too!! Touch it, it'll sing!
+	
+ 
+    </body>
+</html>
